@@ -1,7 +1,7 @@
-// src/PopulationChart.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import styles from './PopulationChart.module.css';
 
 const PopulationChart = () => {
     const [data, setData] = useState([]);
@@ -22,12 +22,13 @@ const PopulationChart = () => {
     }, []);
 
     if (error) {
-        return <div>{error}</div>;
+        return <div className={styles.populationChartContainer}>{error}</div>;
     }
 
     return (
-        <div>
-            <h1>Population of South American Countries</h1>
+        <div className={styles.populationChartContainer}>
+            <h1 className={styles.chartTitle}>Population of South American Countries</h1>
+            <div className={styles.chartWrapper}>
             <BarChart
                 width={800}
                 height={400}
@@ -43,6 +44,7 @@ const PopulationChart = () => {
                 <Legend />
                 <Bar dataKey="population" fill="#8884d8" />
             </BarChart>
+            </div>
         </div>
     );
 };

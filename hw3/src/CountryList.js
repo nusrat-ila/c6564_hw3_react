@@ -1,6 +1,6 @@
-// src/CountryList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './CountryList.module.css';
 
 const CountryList = () => {
     const [countries, setCountries] = useState([]);
@@ -21,11 +21,11 @@ const CountryList = () => {
     }
 
     return (
-        <div>
+        <div className={styles.countryListContainer}>
             <h1>Countries of South America</h1>
-            <ul>
+            <ul className={styles.countryList}>
                 {countries.map((country, index) => (
-                    <li key={index}>
+                    <li key={index} className={styles.countryItem}>
                         <h2>{country.name || 'No name available'}</h2>
                         <img src={country.flag_png} alt={`Flag of ${country.name}`}  style={{ width: '100px', height: '60px', border: '1px solid #ccc' }} />
                         <p>Population: {country.population || 'No population data available'}</p>

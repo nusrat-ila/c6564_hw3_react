@@ -1,8 +1,7 @@
-// src/GDPChart.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PieChart, Pie, Tooltip, Cell, Legend } from 'recharts';
-
+import styles from './GDPChart.module.css';
 const GDPChart = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -29,8 +28,9 @@ const GDPChart = () => {
     }
 
     return (
-        <div>
-            <h1>GDP of South American Countries (in Billions USD)</h1>
+        <div className={styles.gdpChartContainer}>
+        <h1 className={styles.chartTitle}>GDP of South American Countries (in Billions USD)</h1>
+        <div className={styles.chartWrapper}>
             <PieChart width={800} height={400}>
                 <Pie
                     data={data}
@@ -50,6 +50,7 @@ const GDPChart = () => {
                 <Tooltip />
                 <Legend />
             </PieChart>
+            </div>
         </div>
     );
 };

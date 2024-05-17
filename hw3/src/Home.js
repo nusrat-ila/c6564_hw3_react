@@ -1,10 +1,13 @@
 // src/Home.js
 import React from 'react';
+import styles from './Home.module.css';
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to the South America Information Portal</h1>
+        <div className={styles.homeContainer}>
+            <h1 className={styles.welcomeMessage}>
+                Welcome to the South America Information Portal
+            </h1>
         </div>
     );
 };
