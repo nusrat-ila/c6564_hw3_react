@@ -10,6 +10,7 @@ const App = () => {
     return (
         <Router>
              <div style={{ minHeight: '100vh', position: 'relative', paddingBottom: '60px' }}>
+                <title>test</title>
             <Navbar />
             <Routes>
                 <Route path="/home" element={<Home />} />
