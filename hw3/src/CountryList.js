@@ -27,7 +27,7 @@ const CountryList = () => {
                 {countries.map((country, index) => (
                     <li key={index}>
                         <h2>{country.name || 'No name available'}</h2>
-                        <img src={country.flag || 'No flag available'} alt={`Flag of ${country.name}`} style={{ width: '100px' }} />
+                        <img src={country.flag_png} alt={`Flag of ${country.name}`}  style={{ width: '100px', height: '60px', border: '1px solid #ccc' }} />
                         <p>Population: {country.population || 'No population data available'}</p>
                     </li>
                 ))}

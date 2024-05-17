@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import CountryList from './CountryList';
 import PopulationChart from './PopulationChart';
+import GDPChart from './GDPChart';
 
 const App = () => {
     return (
@@ -14,7 +15,7 @@ const App = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/list" element={<CountryList />} />
                 <Route path="/population" element={<PopulationChart />} />
-                <Route path="*" element={<Navigate to="/home" />} />
+                <Route path="/gdp" element={<GDPChart />} />
             </Routes>
         </Router>
     );
