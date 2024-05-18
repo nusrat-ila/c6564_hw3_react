@@ -19,8 +19,9 @@ const App = () => {
                 <Route path="/population" element={<PopulationChart />} />
                 <Route path="/gdp" element={<GDPChart />} />
             </Routes>
-            <Footer />
+            
             </div>
+            <Footer />
         </Router>
     );
 };
