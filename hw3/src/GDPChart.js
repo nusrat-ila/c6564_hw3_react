@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { PieChart, Pie, Tooltip, Cell, Legend } from 'recharts';
+import { PieChart, Pie, Tooltip, Cell, Legend, Text } from 'recharts';
 import styles from './GDPChart.module.css';
+
 const GDPChart = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -29,27 +30,27 @@ const GDPChart = () => {
 
     return (
         <div className={styles.gdpChartContainer}>
-        <h1 className={styles.chartTitle}>GDP of South American Countries (in Billions USD)</h1>
-        <div className={styles.chartWrapper}>
-            <PieChart width={800} height={400}>
-                <Pie
-                    data={data}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    outerRadius={150}
-                    fill="#8884d8"
-                    dataKey="gdp"
-                    nameKey="name"
-                    label={({ name, gdp }) => `${name}: ${gdp}B`}
-                >
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-            </PieChart>
+            <h1 className={styles.chartTitle}>GDP of South American Countries (in Billions USD)</h1>
+            <div className={styles.chartWrapper}>
+                <PieChart width={800} height={400}>
+                    <Pie
+                        data={data}
+                        cx="50%"
+                        cy="50%"
+                        labelLine={false}
+                        outerRadius={150}
+                        fill="#8884d8"
+                        dataKey="gdp"
+                        nameKey="name"
+                        label={({ name, gdp }) => `${name}: ${gdp}B`}
+                    >
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend formatter={(value) => <span style={{ color: '#FFD700' }}>{value}</span>} />
+                </PieChart>
             </div>
         </div>
     );
