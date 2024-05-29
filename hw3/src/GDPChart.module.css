@@ -1,0 +1,27 @@
+.gdpChartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #333333 0%, #666666 100%);
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+.chartTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFD700; /* Brighter color for better contrast */
+}
+
+.chartWrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+}
