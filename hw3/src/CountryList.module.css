@@ -11,20 +11,27 @@
     padding: 20px;
 }
 
+.title {
+    margin-bottom: 20px;
+}
+
 .countryList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 0;
 }
 
 .countryItem {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
-    margin: 10px 0;
-    width: 100%;
-    max-width: 600px;
+    margin: 10px;
+    width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .countryItem h2 {
